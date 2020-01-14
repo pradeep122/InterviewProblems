@@ -1,0 +1,45 @@
+
+
+plugins {
+    id 'application'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = "1.9"
+targetCompatibility = "1.9"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.2.3'
+    compile 'com.squareup.okhttp3:okhttp:4.3.1'
+}
+
+mainClassName = "com.deepster.formattor.Main"
+
+
+task runFormattor(type: JavaExec) {
+    group = "Execution"
+    description = "Running the Formattor Program"
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.deepster.formattor.Main"
+}
+
+task runLinkedList(type: JavaExec) {
+    group = "Execution"
+    description = "Running the Linked List Program"
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.deepster.linkedList.Main"
+}
+
+task runMovies(type: JavaExec) {
+    group = "Execution"
+    description = "Running the Movie Name Search Program"
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.deepster.movies.Main"
+}
+
